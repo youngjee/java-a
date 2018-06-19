@@ -9,6 +9,27 @@ public class MathExample {
 				+ Math.pow(Math.abs(b[1] - a[1]), 2));
 	}
 	
+	//반올림 구하기
+	public static long 반올림(double num){
+		return Math.round(num);
+	}
+	
+	//올림
+	public static double 올림(double num){
+		return Math.ceil(num);
+	}
+	
+	//버림
+	public static double 버림(double num){
+		return Math.floor(num);
+	}
+	
+	//소수점 n째 자리에서 반올림
+	public static double 소수점반올림(double num, int n){
+		double result = Math.round(num*Math.pow(10, n))/Math.pow(10, n);
+		return result;
+	}
+	
 	//최대공약수 구하기
 	public static int gcd(int a, int b) {
 	    if (b == 0){
@@ -58,5 +79,7 @@ public class MathExample {
 		//6, 9, 15
 		System.out.println("3자리 최대공약수: "+ gcdArr(new int[]{6, 18, 3}));
 		System.out.println("3자리 최소공배수: "+ lcmArr(new int[]{6, 18, 3}));
+		
+		System.out.println(소수점반올림(10.2462343, 3));
 	}
 }
