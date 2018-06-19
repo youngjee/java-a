@@ -37,13 +37,17 @@ public class MathExample {
 	}
 	
 	//여러숫자의 최소공배수 구하기
-	public static long lcmArr(int[] arr) {
-		long result = 1;
-		for (int i = 0; i < arr.length; i++) {
-			result*=arr[i];
+	public static int lcmArr(int[] arr) {
+		if(arr.length==1){
+			return arr[0];
+		}else if(arr.length==2){
+			return lcm(arr[0],arr[1]);
 		}
-		result = result/(long)Math.pow(gcdArr(arr), arr.length);
-		return result;
+		else{
+			int result = lcm(arr[arr.length-2], arr[arr.length-1]);
+			int[] copiedArr = Arrays.copyOf(arr, arr.length-2);
+			return lcm(lcmArr(copiedArr), result);
+		}
 	}
 	
 	public static void main(String[] args) {
