@@ -1,4 +1,4 @@
-package cast;
+package data.map;
 
 import java.util.ArrayList;
 import java.util.Collections;
