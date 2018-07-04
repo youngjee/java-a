@@ -2,7 +2,7 @@ package pattern;
 
 public class FindSamePattern {
 	public static void main(String[] args) {
-		String[] strArr = {"config.sys", "config.inf", "config.ure"};
+		String[] strArr = {"config.syss", "config.infs", "config.ures"};
 		System.out.println(findSameStr(strArr));
 		
 	}

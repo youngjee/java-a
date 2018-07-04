@@ -18,6 +18,7 @@ import javax.swing.plaf.basic.BasicBorders.SplitPaneBorder;
  7) 일반전화 : ^\d{2.3} - \d{3,4} - \d{4}$
  8) 주민등록번호 : \d{6} \- [1-4]\d{6}
  9) IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
+ 10) 확장자 : String allowPattern = ".+\\.(TXT|xls|hwp|jpg|zip|tif|alz|bmp|pdf)$";
 
  \w : 알파벳이나 숫자
  \W : 알파벳이나 숫자 제외한 문자
