@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 import javax.swing.plaf.basic.BasicBorders.SplitPaneBorder;
 
+//
 //패턴 찾기
 /*
  * 1) 숫자만 : ^[0-9]*$
@@ -22,6 +23,7 @@ import javax.swing.plaf.basic.BasicBorders.SplitPaneBorder;
  9) IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
  10) 확장자 : String allowPattern = ".+\\.(TXT|xls|hwp|jpg|zip|tif|alz|bmp|pdf)$";
 
+ 11) 날짜 (2012-01-31): "^20\\d{2}-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$" 
  \w : 알파벳이나 숫자
  \W : 알파벳이나 숫자 제외한 문자
  \d : 숫자
