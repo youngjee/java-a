@@ -3,6 +3,16 @@ package math;
 import java.util.Arrays;
 
 public class MathExample {
+	
+	//최소값
+	public static int min(int[] arr){
+		int min = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if(arr[i]<min)
+				min = arr[i];
+		}
+		return min;
+	}
 	// 거리 구하기
 	public static double calcul거리(int[] a, int[] b) {
 		return Math.sqrt(Math.pow(Math.abs(b[0] - a[0]), 2)
