@@ -22,13 +22,17 @@ public class Iceberg {
 		
 		for (int i = 0; i < globalIceberg.length; i++) {
 			for (int j = 0; j < globalIceberg[0].length; j++) {
-				if(globalIceberg[i][j] == 0) {
+				if(globalIceberg[i][j] == 0&&!searchRoad[i][j]) {
 					List<int[]> currentNums = new ArrayList<int[]>();
+					int result = 0;
 					if(searchIceBurg(i, j, currentNums)) {
 						for (int[] current: currentNums) {
 							resultIceberg[current[0]][current[1]] = 9;
+							result++;
 						}
+						System.out.println("내부물크기: ("+i+","+j+")"+result);
 					}
+					
 				}
 			}
 		}
@@ -50,14 +54,16 @@ public class Iceberg {
 		}
 		//아니면 찾기
 		else{
-			if(globalIceberg[x][y]==0 && searchRoad[x][y]==false){
-				int[] current = {x,y};
-				currentNums.add(current);
-				searchRoad[x][y]=true;
-				
-				if(!searchIceBurg(x+1, y, currentNums)||!searchIceBurg(x, y+1, currentNums)
-					||!searchIceBurg(x-1, y, currentNums)||!searchIceBurg(x, y-1, currentNums)) {
-					return false;
+			if(globalIceberg[x][y]==0 ){
+				if(searchRoad[x][y]==false) {
+					int[] current = {x,y};
+					currentNums.add(current);
+					searchRoad[x][y]=true;
+					
+					if(!searchIceBurg(x+1, y, currentNums)||!searchIceBurg(x, y+1, currentNums)
+						||!searchIceBurg(x-1, y, currentNums)||!searchIceBurg(x, y-1, currentNums)) {
+						return false;
+					}
 				}
 			}
 			return true;
