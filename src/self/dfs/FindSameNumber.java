@@ -3,6 +3,7 @@ package self.dfs;
 import java.util.ArrayList;
 import java.util.List;
 
+//배열 안에 네모를 찾는 문제. 네모 말고 이상한 모양은 없다고 가정함.
 public class FindSameNumber {
 
 	public static void main(String[] args) {
@@ -37,7 +38,7 @@ public class FindSameNumber {
 		for (int i = 0; i < nums.length; i++) {
 			for (int j = 0; j < nums.length; j++) {
 				List<int[]> currentNums = new ArrayList<int[]>();
-				dfs(i, j, nums[i][j], currentNums);
+				dfs(i, j, 4, currentNums);
 				if(currentNums.size()>1) {
 					for (int k = 0; k < currentNums.size(); k++) {
 						searchNums[currentNums.get(k)[0]][currentNums.get(k)[1]] = nums[currentNums.get(k)[0]][currentNums.get(k)[1]];
