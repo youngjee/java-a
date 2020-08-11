@@ -20,6 +20,7 @@ public class TimeDifferent {
 		Date startDate;
 		Date endDate;
 		long diff = 0;
+		
 		try {
 			startDate = sdformat.parse(time1);
 			endDate = sdformat.parse(time2);

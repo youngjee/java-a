@@ -10,39 +10,6 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class MapExample {
-	//Map의 key값을 list로 정렬하여 출력하는 함수
-	public static void sortByKey(Map map) {
-		
-		/*Map<String,Integer> tm = new TreeMap<String,Integer>(map);
-		Iterator<String> iteratorKey = tm.keySet( ).iterator( );   //키값 오름차순 정렬(기본)
-		*/
-		 //내림차순
-		 TreeMap<String, Integer> tm = new TreeMap<String, Integer>(Collections.reverseOrder());
-		 tm.putAll(map);
-		 
-		 Iterator<String> iteratorKey = tm.keySet( ).iterator( );
-		while(iteratorKey.hasNext()) {
-			String key = iteratorKey.next();
-		  System.out.println(key+","+tm.get(key));
-		 }
-    }
-	
-	public static List sortByValue(final Map map) {
-
-        List<String> list = new ArrayList();
-        list.addAll(map.keySet());
-        
-        Collections.sort(list,new Comparator() {
-            public int compare(Object o1,Object o2) {
-                Object v1 = map.get(o1);
-                Object v2 = map.get(o2);
-                return ((Comparable) v2).compareTo(v1);
-            }
-
-        });
-        Collections.reverse(list); // 주석시 오름차순
-        return list;
-    }
 	
 	public static void main(String[] args) {
 		Map<String,Integer> hashMap = new HashMap<String,Integer>();
@@ -79,6 +46,42 @@ public class MapExample {
             System.out.println(temp + " = " + hashMap.get(temp));
         }
 	}
+	
+	//Map의 key값을 list로 정렬하여 출력하는 함수
+	public static void sortByKey(Map map) {
+		
+		/*Map<String,Integer> tm = new TreeMap<String,Integer>(map);
+		Iterator<String> iteratorKey = tm.keySet( ).iterator( );   //키값 오름차순 정렬(기본)
+		*/
+		 //내림차순
+		 TreeMap<String, Integer> tm = new TreeMap<String, Integer>(Collections.reverseOrder());
+		 tm.putAll(map);
+		 
+		 Iterator<String> iteratorKey = tm.keySet( ).iterator( );
+		while(iteratorKey.hasNext()) {
+			String key = iteratorKey.next();
+		  System.out.println(key+","+tm.get(key));
+		 }
+    }
+	
+	public static List sortByValue(final Map map) {
+
+        List<String> list = new ArrayList();
+        list.addAll(map.keySet());
+        
+        Collections.sort(list,new Comparator() {
+            public int compare(Object o1,Object o2) {
+                Object v1 = map.get(o1);
+                Object v2 = map.get(o2);
+                return ((Comparable) v2).compareTo(v1);
+            }
+
+        });
+        Collections.reverse(list); // 주석시 오름차순
+        return list;
+    }
+	
+	
 	
 
 

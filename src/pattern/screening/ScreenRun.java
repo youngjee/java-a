@@ -36,58 +36,62 @@ public class ScreenRun {
 	}
 	
 	public static String screen(String a, String b){
-		char[] aArr = a.toCharArray();
-		char[] bArr = b.toCharArray();
-		
-		for (int i = 0; i < bArr.length; i++) {
-			for (int j = 0; j < aArr.length; j++) {
-				if(bArr[i]==aArr[j]){
-					String matchingStr="";
-					for (int k = j; k < aArr.length; k++) {
-						if(aArr[k]!=bArr[k-j]){
-							break;
-						}else{
-							matchingStr+=aArr[k];
-						}
-						
-						if(k==aArr.length-1){
-							return matchingStr;
-						}
-					}
-				}
+		for (int i = 0; i < a.length(); i++) {
+			String sub = a.substring(i);
+			if(b.startsWith(sub)) {
+				return sub;
 			}
 		}
 		
+		for(int i=0; i<b.length(); i++) {
+			String sub = b.substring(i);
+			if(a.startsWith(sub)) {
+				return sub;
+			}
+		}
 		return null;
+
 	}
 	
 	public static String totalStr(String a, String b){
-		char[] aArr = a.toCharArray();
-		char[] bArr = b.toCharArray();
-		
-		String result = "";
-		
-		for (int i = 0; i < bArr.length; i++) {
-			for (int j = 0; j < aArr.length; j++) {
-				if(bArr[i]==aArr[j]){
-					String matchingStr="";
-					for (int k = j; k < aArr.length; k++) {
-						if(aArr[k]!=bArr[k-j]){
-							break;
-						}else{
-							matchingStr+=aArr[k];
-						}
-						
-						if(k==aArr.length-1){
-							result = a.substring(0, j);
-							result += b;
-							return result;
-						}
-					}
-				}
+//		char[] aArr = a.toCharArray();
+//		char[] bArr = b.toCharArray();
+//		
+//		String result = "";
+//		
+//		for (int i = 0; i < bArr.length; i++) {
+//			for (int j = 0; j < aArr.length; j++) {
+//				if(bArr[i]==aArr[j]){
+//					String matchingStr="";
+//					for (int k = j; k < aArr.length; k++) {
+//						if(aArr[k]!=bArr[k-j]){
+//							break;
+//						}else{
+//							matchingStr+=aArr[k];
+//						}
+//						
+//						if(k==aArr.length-1){
+//							result = a.substring(0, j);
+//							result += b;
+//							return result;
+//						}
+//					}
+//				}
+//			}
+//		}
+		for (int i = 0; i < a.length(); i++) {
+			String sub = a.substring(i);
+			if(b.startsWith(sub)) {
+				return a.substring(0, i)+sub+b.substring(sub.length());
 			}
 		}
 		
+		for(int i=0; i<b.length(); i++) {
+			String sub = b.substring(i);
+			if(a.startsWith(sub)) {
+				return b.substring(0, i)+sub+a.substring(sub.length());
+			}
+		}
 		return null;
 	}
 }
