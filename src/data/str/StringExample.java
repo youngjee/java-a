@@ -25,7 +25,6 @@ public class StringExample {
 	public static String sortStr(String str, boolean increase){
 		List<String> list = Arrays.asList(str.split(""));
 		Collections.sort(list, new Comparator<String>() {
-
 			@Override
 			public int compare(String o1, String o2) {
 				int inc=increase?1:-1; //오름차순인경우 1, 내림차순인 경우 -1
